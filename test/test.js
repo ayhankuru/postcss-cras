@@ -25,4 +25,34 @@ describe('postcss-crass', function () {
             '#b,a{font-weight:700}#c{color:red}',
             {o1: true}, done);
     });
+
+    // default swallow error false
+    it('Test 3:', function (done) {
+        test('a{font-weight:bold;;}#c{color:red}#b{font-weight:bold}',
+            '#b,a{font-weight:700}#c{color:red}',
+            {o1: true}, function(err) {
+                expect(err).to.be.defined;
+                done();
+            });
+    });
+
+    // swallow error false
+    it('Test 4:', function (done) {
+        test('a{font-weight:bold;;}#c{color:red}#b{font-weight:bold}',
+            '#b,a{font-weight:700}#c{color:red}',
+            {o1: true, swallowError: false}, function(err) {
+                expect(err).to.be.defined;
+                done();
+            });
+    });
+
+    // swallow error true
+    it('Test 5:', function (done) {
+        test('a{font-weight:bold;;}#c{color:red}#b{font-weight:bold}',
+            '#b,a{font-weight:700}#c{color:red}',
+            {o1: true, swallowError: true}, function(err) {
+                expect(err).to.be.empty;
+                done();
+            });
+    });
 });

@@ -7,17 +7,27 @@ module.exports = postcss.plugin('postcss-crass', function(opts) {
     if (!opts) {
         opts = {pretty: true, o1: true};
     }
+
+    var swallowError = !!opts.swallowError;
+
+    if (opts.swallowError) {
+        delete opts.swallowError;
+    }
+
     return function (css, result) {
         try {
             var parsed = crass.parse(css.toResult().toString());
             parsed = parsed.optimize({o1: opts.o1 || false});
+
             if(opts.pretty){
                 parsed = parsed.pretty();
             }
-            result.root = postcss.parse(parsed.toString());
 
+            result.root = postcss.parse(parsed.toString());
         } catch (err) {
-            throw new Error(err);
+            if (!swallowError) {
+                throw new Error(err);
+            }
         }
     };
 });
