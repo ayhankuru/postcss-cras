@@ -2,7 +2,7 @@
 
 [PostCSS] plugin crass.
 
-[PostCSS]: https://github.com/postcss/postcss 
+[PostCSS]: https://github.com/postcss/postcss
 
 ```css
 b, c, a {
@@ -37,6 +37,13 @@ postcss([ crass(opts) ])
 
 ## Options
 
+#### options.swallowError
+
+Type: `Boolean`
+Default: `false`
+
+If true, crass won't throw errors.
+
 ### crass(options)
 
 
@@ -46,8 +53,7 @@ Type: `Boolean`
 Default: `false`
 
 
-#### options.o1 
+#### options.o1
 
 Type: `Boolean`
 Default: `true`
-
