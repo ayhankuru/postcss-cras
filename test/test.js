@@ -30,7 +30,7 @@ describe('postcss-crass', function () {
     it('Test 3:', function (done) {
         test('a{font-weight:bold;;}#c{color:red}#b{font-weight:bold}',
             '#b,a{font-weight:700}#c{color:red}',
-            {o1: true, swallowError: false}, function(err) {
+            {o1: true}, function(err) {
                 expect(err).to.be.defined;
                 done();
             });
