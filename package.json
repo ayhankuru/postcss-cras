@@ -1,6 +1,6 @@
 {
   "name": "postcss-crass",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "PostCSS crass plugin",
   "keywords": [
     "postcss",
@@ -9,19 +9,19 @@
     "crass",
     "analysis"
   ],
-  "author": "ayhankuru <ayhankuru@yandex.com.tr>",
+  "author": "c0b41 <cobaimelan@protonmail.ch>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ayhankuru/postcss-crass.git"
+    "url": "https://github.com/c0b41/postcss-crass.git"
   },
   "bugs": {
-    "url": "https://github.com/ayhankuru/postcss-crass/issues"
+    "url": "https://github.com/c0b41/postcss-crass/issues"
   },
-  "homepage": "https://github.com/ayhankuru/postcss-crass",
+  "homepage": "https://github.com/c0b41/postcss-crass",
   "dependencies": {
     "crass": "^0.12.3",
-    "postcss": "^6.0.21"
+    "postcss": "^7.0.2"
   },
   "devDependencies": {
     "chai": "^3.0.0",
